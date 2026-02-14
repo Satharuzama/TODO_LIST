@@ -58,6 +58,7 @@ li {
   padding: 5px 10px;
   background-color: rgb(196, 196, 245);
   display: flex;
+  border-radius: 15px;
   
 }
 
@@ -82,7 +83,7 @@ li:hover{
 }
 
 li:nth-child(even) {
-  background-colors: rgb(224, 213, 213);
+  background-color: rgb(224, 213, 213);
 }
 
 li:nth-child(even):hover{
