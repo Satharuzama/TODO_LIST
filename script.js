@@ -5,11 +5,10 @@ let box = document.querySelector(".box");
 let list = document.querySelector(".list");
 let h = document.querySelector("h2");
 
-
 btn.addEventListener("click", function () {
   if (inp.value !== "") {
-    h.innerHTML = "To do List"
-    h.style.color = "black"
+    h.innerHTML = "To do List";
+    h.style.color = "black";
     let li = document.createElement("li");
     li.innerHTML = inp.value;
     inp.value = "";
@@ -21,6 +20,9 @@ btn.addEventListener("click", function () {
     li.append(removed);
 
     ListItems.append(li);
+    li.addEventListener("click", function (event) {
+      event.target.classList.toggle("checked");
+    });
     console.log(li);
 
     removed.addEventListener("click", function (event) {
@@ -29,10 +31,6 @@ btn.addEventListener("click", function () {
   } else {
     h.innerHTML = "Add task";
     h.style.color = "red";
-// alert("Add a task")
+    // alert("Add a task")
   }
-});
-
-ListItems.addEventListener("click", function (event) {
-  event.target.classList.toggle("checked");
 });
