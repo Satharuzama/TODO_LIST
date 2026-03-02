@@ -5,7 +5,14 @@ let box = document.querySelector(".box");
 let list = document.querySelector(".list");
 let h = document.querySelector("h2");
 
-btn.addEventListener("click", function () {
+inp.addEventListener("keydown",function(event){
+    if(event.key==="Enter"){
+        btn.click();
+  }
+})
+
+function mainCode(){
+  btn.addEventListener("click", function () {
   if (inp.value !== "") {
     h.innerHTML = "To do List";
     h.style.color = "black";
@@ -25,8 +32,10 @@ btn.addEventListener("click", function () {
     });
     console.log(li);
 
+
     removed.addEventListener("click", function (event) {
       event.target.closest("li").remove();
+      
     });
   } else {
     h.innerHTML = "Add task";
@@ -34,3 +43,5 @@ btn.addEventListener("click", function () {
     // alert("Add a task")
   }
 });
+}
+mainCode();
